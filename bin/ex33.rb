@@ -10,8 +10,6 @@ while i < 6
 	puts "At the bottom i is #{i}"
 end
 
-number = gets.chomp.to_i
-
 puts "The numbers: "
 
 for num in numbers
