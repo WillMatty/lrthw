@@ -6,7 +6,7 @@ def gold_room()
 	puts "This room is filled with gold. How much do you take?"
 
 	prompt; next_move = gets.chomp
-	if next_move.include? "0" or next_move.include? "1"
+	if next_move.to_i != 0
 		how_much = next_move.to_i()
 	else
 		dead("Man, learn to type a number.")
