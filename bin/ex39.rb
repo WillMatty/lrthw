@@ -55,4 +55,4 @@ end
 
 # get a city with a default value
 city = cities['TX'] || 'Does not exist'
-puts "The city for the state of 'TX' is: %s" city
+puts "The city for the state of 'TX' is: %s" % city
