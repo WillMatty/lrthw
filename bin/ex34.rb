@@ -62,7 +62,7 @@ def cthulhu_room()
 end
 
 def dead(why)
-	puts "#{why} Nice one!"
+	puts "#{why} Halfwit."
 	Process.exit(0)
 end
 
@@ -83,4 +83,3 @@ def start()
 end
 
 start()
-		
