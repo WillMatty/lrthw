@@ -1,4 +1,4 @@
-require "open_uri"
+require 'open-uri'
 
 WORD_URL = "http://learncodethehardway.org/words.txt"
 WORDS = []
@@ -12,7 +12,7 @@ PHRASES = {
   "***.*** = '***'" => "From *** get the *** attribute and set it to '***'.",
 }
 
-PHRASE_FIRST = ARGV[0] == "english"
+PHRASE_FIRST = (ARGV[0] == "english")
 
 open(WORD_URL) {|f|
   f.each_line {|word| WORDS.push(word.chomp)}
@@ -53,9 +53,9 @@ def convert(snippet, phrase)
     result.gsub!(/\*\*\*/) {|x| other_names.pop }
 
     # fake parameter list
-    results.gsub!(/@@@/) {|x| param_names.pop }
+    result.gsub!(/@@@/) {|x| param_names.pop }
 
-    result.push(result)
+    results.push(result)
   end
 
   return results
@@ -72,6 +72,8 @@ loop do
     if PHRASE_FIRST
       question, answer = answer, question
     end
+
+    print question, "\n\n> "
 
     exit(0) unless STDIN.gets
 
