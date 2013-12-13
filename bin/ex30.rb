@@ -3,23 +3,23 @@ cars = 40
 buses = 15
 
 if cars > people
-	puts "We should take the cars."
+  puts "We should take the cars."
 elsif cars < people
-	puts "We shoud not take the cars."
+  puts "We shoud not take the cars."
 else
-	puts "We can't decide."
+  puts "We can't decide."
 end
 
 if buses > cars
-	puts "That's too many buses."
+  puts "That's too many buses."
 elsif buses < cars
-	puts "Maybe we could take the buses."
+  puts "Maybe we could take the buses."
 else
-	puts "We still can't decide."
+  puts "We still can't decide."
 end
 
 if people > buses
-	puts "Alright, let's just take the buses."
+  puts "Alright, let's just take the buses."
 else
-	puts "Fine, let's stay home then."
+  puts "Fine, let's stay home then."
 end

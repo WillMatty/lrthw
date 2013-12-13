@@ -6,10 +6,10 @@ stuff = ten_things.split(' ')
 more_stuff = %w(Day Night Song Frisbee Corn Banana Girl Boy)
 
 while stuff.length != 10
-	next_one = more_stuff.pop()
-	puts "Adding #{next_one}"
-	stuff.push(next_one)
-	puts "There's #{stuff.length} items now."
+  next_one = more_stuff.pop()
+  puts "Adding #{next_one}"
+  stuff.push(next_one)
+  puts "There's #{stuff.length} items now."
 end
 
 puts "There we go: #{stuff}"
