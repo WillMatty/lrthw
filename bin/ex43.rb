@@ -30,45 +30,61 @@ class Game
   end
 
   def central_corridor()
-    puts "The Gothons of Planet Percal #25 have invaded your ship and destroyed"
-    puts "your entire crew. You are the last surviving member and your last"
-    puts "mission is to get the neutron destruct bomb from the Weapons Armoury,"
-    puts "put it in the bridge, and blow your ship up after getting into an"
-    puts "escape pod."
-    puts "\n"
-    puts "You're running down the central corridor to the Weapons Armoury when"
-    puts "a Gothon jumps out, red scaly skin, dark grimy teeth, and an evil clown costume"
-    puts "flowing around his hate-filled body. He's blocking the door to the"
-    puts "Armoury and about to pull a weapon to blast you."
+    c_c1 = <<-Str
+The Gothons of Planet Percal #25 have invaded your ship and destroyed
+your entire crew. You are the last surviving member and your last
+mission is to get the neutron destruct bomb from the Weapons Armoury,
+put it in the bridge, and blow your ship up after getting into an
+escape pod.
+    
+You're running down the central corridor to the Weapons Armoury when
+a Gothon jumps out, red scaly skin, dark grimy teeth, and an evil clown costume
+flowing around his hate-filled body. He's blocking the door to the
+Armoury and about to pull a weapon to blast you.
+    Str
+
+    puts c_c1
 
     prompt()
     action = gets.chomp()
 
     if action.include? "shoot"
-      puts "Quick on the draw you yank out your blaster and fire it at the Gothon."
-      puts "His clown costume is flowing and moving around his body, which throws"
-      puts "off your aim. Your laser hits his costume but misses him entirely. This"
-      puts "completely ruins his brand new costume his mother bought him, which"
-      puts "makes him fly into an insane rage and blast you repeatedly in the face until"
-      puts "you are dead. Then he eats you."
+      c_c2 = <<-Str
+Quick on the draw you yank out your blaster and fire it at the Gothon.
+His clown costume is flowing and moving around his body, which throws
+off your aim. Your laser hits his costume but misses him entirely. This
+completely ruins his brand new costume his mother bought him, which
+makes him fly into an insane rage and blast you repeatedly in the face until
+you are dead. Then he eats you.
+      Str
+
+      puts c_c2
       return :death
 
     elsif action.include? "dogde"
-      puts "Like a world class boxer, you dogde, weave, slip and slide right"
-      puts "as the Gothon's blaster cranks a laser past your head."
-      puts "In the middle of your artful dodge, your foot slips and you"
-      puts "bang your head on the metal wall and pass out."
-      puts "You wake up shortly after only to die as the Gothon stomps on"
-      puts "your head and eats you."
+      c_c3 = <<-Str
+Like a world class boxer, you dogde, weave, slip and slide right
+as the Gothon's blaster cranks a laser past your head
+In the middle of your artful dodge, your foot slips and you
+bang your head on the metal wall and pass out
+You wake up shortly after only to die as the Gothon stomps on
+your head and eats you.
+      Str
+
+      puts c_c3
       return :death
 
     elsif action.include? "tell a joke"
-      puts "Lucky for you they make you learn Gothon insults in the academy."
-      puts "You tell the one Gothon joke you know:"
-      puts "Lbhe zbgure vf fb sng, jura fur fvgf nebhaq gur ubhfr, fur fvgf nebhaq gur ubhfr."
-      puts "The Gothon stops, tries not to laugh, then bursts out laughing and can't move."
-      puts "While he's laughing you run up and shoot him square in the head"
-      puts "putting him down, then jump through the Weapon Armoury door."
+      c_c4 = <<-Str 
+Lucky for you they make you learn Gothon insults in the academy.
+You tell the one Gothon joke you know:
+Lbhe zbgure vf fb sng, jura fur fvgf nebhaq gur ubhfr, fur fvgf nebhaq gur ubhfr.
+The Gothon stops, tries not to laugh, then bursts out laughing and can't move.
+While he's laughing you run up and shoot him square in the head
+putting him down, then jump through the Weapon Armoury door.
+      Str
+
+      puts c_c4
       return :laser_weapon_armoury
 
     else
@@ -78,20 +94,24 @@ class Game
   end
 
   def laser_weapon_armoury()
-    puts "You do a dive roll into the Weapon Armoury, crouch and scan the room"
-    puts "for more Gothons that might be hiding. It's dead quiet, too quiet."
-    puts "You stand up and run to the far side of the room and find the"
-    puts "neutron bomb in its container. There's a keyboard lock on the box"
-    puts "and you need the code to get the bomb out. If you get the code"
-    puts "wrong 10 times then the lock closes forever and you can't"
-    puts "get the bomb. The code is 3 digits."
+    lwp1 = <<-Str
+You do a dive roll into the Weapon Armoury, crouch and scan the room
+for more Gothons that might be hiding. It's dead quiet, too quiet.
+You stand up and run to the far side of the room and find the
+neutron bomb in its container. There's a keyboard lock on the box
+and you need the code to get the bomb out. If you get the code
+wrong 10 times then the lock closes forever and you can't
+get the bomb. The code is 3 digits.
+    Str
+
+    puts lwp1
     code  = "%s%s%s" % [rand(9)+1, rand(9)+1, rand(9)+1]
     print "[keypad]> "
     guess = gets.chomp()
     guesses = 0
 
 
-    while guess != code and guesses < 10
+    while guess != code and guesses < 9
       puts "BZZZZZDDDD!"
       guesses += 1
       print "[keypad]> "
@@ -99,48 +119,67 @@ class Game
     end
 
     if guess == code
-      puts "The container clicks open and the seal breaks, letting gas out."
-      puts "You grab the neutron bomb and run as fast as you can to the"
-      puts "bridge where you must place it in the right spot."
+      lwp2 = <<-Str
+The container clicks open and the seal breaks, letting gas out.
+You grab the neutron bomb and run as fast as you can to the
+bridge where you must place it in the right spot.
+      Str
+
+      puts lwp2
       return :the_bridge
     else
-      puts "The lock buzzes one last time and then you hear a sickening"
-      puts "melting sound as the mechanism is fused together."
-      puts "You decide to sit there, and finally the Gothons blow up the"
-      puts "ship from their ship and you die."
+      lwp3 = <<-Str
+The lock buzzes one last time and then you hear a sickening
+melting sound as the mechanism is fused together.
+You decide to sit there, and finally the Gothons blow up the
+ship from their ship and you die.
+      Str
+
+      puts lwp3
       return :death
     end
   end
 
   def the_bridge()
-    puts "You burst onto the Bridge with the neutron destruct bomb"
-    puts "under your arm and surprise 5 Gothons who are trying to"
-    puts "take control of the ship. Each of them has an even uglier"
-    puts "clown costume than the last. They haven't pulled their"
-    puts "weapons out yet, as they see the active bomb under your"
-    puts "arm and don't want to set it off."
+    b1 = <<-Str
+You burst onto the Bridge with the neutron destruct bomb
+under your arm and surprise 5 Gothons who are trying to
+take control of the ship. Each of them has an even uglier
+clown costume than the last. They haven't pulled their
+weapons out yet, as they see the active bomb under your
+arm and don't want to set it off.
+    Str
 
+    puts b1
     prompt()
     action = gets.chomp()
 
     if action.include? "throw"
-      puts "In a panic you throw the bomb at the group of Gothons"
-      puts "and make a leap for the door. Right as you drop it a"
-      puts "Gothon shoots you right in the back killing you."
-      puts "As you die, you see another Gothon frantically try to disarm"
-      puts "the bomb. You die knowing they will probably blow up when"
-      puts "it goes off."
+      b2 = <<-Str
+In a panic you throw the bomb at the group of Gothons
+and make a leap for the door. Right as you drop it a
+Gothon shoots you right in the back killing you.
+As you die, you see another Gothon frantically try to disarm
+the bomb. You die knowing they will probably blow up when
+it goes off.
+      Str
+
+      puts b2
       return :death
 
     elsif action.include? "place"
-      puts "You point your blaster at the bomb under your arm"
-      puts "and the Gothons put their hands up and start to sweat."
-      puts "You inch backwards to the door, open it, and then carefully"
-      puts "place the bomb on the floor, pointing your blaster at it."
-      puts "You then jump back through the door, punch the close button"
-      puts "and blast the lock so the Gothons can't get out."
-      puts "Now that the bomb is placed, you run to the escape pod to"
-      puts "get off this tin can."
+      b3 = <<-Str
+You point your blaster at the bomb under your arm
+and the Gothons put their hands up and start to sweat.
+You inch backwards to the door, open it, and then carefully
+place the bomb on the floor, pointing your blaster at it.
+You then jump back through the door, punch the close button
+and blast the lock so the Gothons can't get out.
+Now that the bomb is placed, you run to the escape pod to
+get off this tin can.
+      Str
+
+      puts b3
       return :escape_pod
     else
       puts "DOES NOT COMPUTE!"
@@ -149,31 +188,42 @@ class Game
   end
 
   def escape_pod()
-    puts "You rush through the ship desperately trying to make it to"
-    puts "the escape pod before the whole ship explodes. It seems like"
-    puts "hardly any Gothons are on the ship, so your run is clear of"
-    puts "interference. You get to the chamber with the escape pods, and"
-    puts "now need to pick one to take. Some of them could be damaged"
-    puts "but you don't have time to look. There are 5 pods, which one"
-    puts "do you take?"
+    e1 = <<-Str
+You rush through the ship desperately trying to make it to
+the escape pod before the whole ship explodes. It seems like
+hardly any Gothons are on the ship, so your run is clear of
+interference. You get to the chamber with the escape pods, and
+now need to pick one to take. Some of them could be damaged
+but you don't have time to look. There are 5 pods, which one
+do you take?
+    Str
 
+    puts e1
     good_pod = rand(5)+1
     print "[pod #]> "
     guess = gets.chomp()
 
     if guess.to_i != good_pod
-      puts "You jump into pod %s and hit the eject button." % guess
-      puts "The pod escapes out into the void of space, then"
-      puts "implodes as the hull ruptures, crushing your body"
-      puts "into humanberry jam."
+      e2 = <<-Str
+You jump into pod %s and hit the eject button.
+The pod escapes out into the void of space, then
+implodes as the hull ruptures, crushing your body
+into humanberry jam.
+      Str
+
+      puts e2 % guess
       return :death
     else
-      puts "You jump into pod %s and hit the eject button." % guess
-      puts "The pod easily slides out into space heading to"
-      puts "the planet below. As it flies to the planet, you look"
-      puts "back and see your ship implode then explode like a"
-      puts "bright star, taking out the Gothon ship at the same"
-      puts "time. You won!"
+      e3 = <<-Str
+You jump into pod %s and hit the eject button.
+The pod easily slides out into space heading to
+the planet below. As it flies to the planet, you look
+back and see your ship implode then explode like a
+bright star, taking out the Gothon ship at the same
+time. You won!
+      Str
+
+      puts e3 % guess
       Process.exit(0)
     end
   end
