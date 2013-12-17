@@ -3,7 +3,7 @@ class Game
   def initialize(start)
     @quips = [
       "You died. You kind of suck at this.",
-      "Nice job, you died ... jackass.",
+      "Nice job, you died ... twit.",
       "Such a loser..",
       "I have a small puppy that's better at this.",
     ]
