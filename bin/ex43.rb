@@ -74,7 +74,7 @@ your head and eats you.
       puts c_c3
       return :death
 
-    elsif action.include? "tell a joke"
+    elsif action.include? "joke"
       c_c4 = <<-Str 
 Lucky for you they make you learn Gothon insults in the academy.
 You tell the one Gothon joke you know:
