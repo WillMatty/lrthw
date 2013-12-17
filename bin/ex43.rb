@@ -101,11 +101,12 @@ You stand up and run to the far side of the room and find the
 neutron bomb in its container. There's a keyboard lock on the box
 and you need the code to get the bomb out. If you get the code
 wrong 10 times then the lock closes forever and you can't
-get the bomb. The code is 3 digits.
+get the bomb. The code is 3 digits. Each digit only goes up to 5
+however.
     Str
 
     puts lwp1
-    code  = "%s%s%s" % [rand(9)+1, rand(9)+1, rand(9)+1]
+    code  = "%s%s%s" % [rand(5)+1, rand(5)+1, rand(5)+1]
     print "[keypad]> "
     guess = gets.chomp()
     guesses = 0
